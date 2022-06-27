@@ -1,0 +1,13 @@
+* {
+  /* 배경 이미지를 가져오고, 사이즈를 웹페이지 화면에 맞게 조절하고, 위치를 중간으로 옮기는 코드 */
+  background-image: url(./bg.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.goods_wrapper {
+  /* display: flex로 한 줄로 세우되, 화면의 크기가 줄어들었을 때 잘리는게 아니라 줄바꿈이 일어나게 하고싶다면 */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
