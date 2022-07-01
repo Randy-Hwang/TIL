@@ -14,3 +14,16 @@ const navigate = useNavigate();
 </Routes>;
 
 // ------------------------------------------------------------
+
+const TabContent = ({ tab }) => {
+  const content0 = <div>content 0</div>;
+  const content1 = <div>content 1</div>;
+  const content2 = <div>content 2</div>;
+
+  return [content0, content1, content2][tab];
+};
+
+// 보여줄 내용이 여러개이고, 탭을 어떤 걸 누르냐에 따라 보여줘야 할 내용이 다를 때
+// 각 탭의 내용을 변수에 저장해두고, 그 변수들을 배열로 만들고, 탭의 번호와 배열의 인덱스를 매치시키면..!
+
+// ---------------------------------------------------------------
