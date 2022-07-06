@@ -1,3 +1,5 @@
+const { useTransition, useDeferredValue } = require("react");
+
 // npm i react-router-dom
 const navigate = useNavigate();
 // -> navigate("/") => 홈으로 이동. 페이지를 이동시켜주는 역할
@@ -27,3 +29,23 @@ const TabContent = ({ tab }) => {
 // 각 탭의 내용을 변수에 저장해두고, 그 변수들을 배열로 만들고, 탭의 번호와 배열의 인덱스를 매치시키면..!
 
 // ---------------------------------------------------------------
+// Automatic Batching
+// state 변경이 연달아서 일어날 경우, 원래는 변경될 때 마다 재랜더링이 일어남
+// Batching이 패치되면서 이젠 이 변화들을 한번에 모아서 한번만 재렌더링이 일어나도록 함
+
+// -----------------------------------------------------------
+
+// useTransition
+let [isPending, startTransition] = useTransition();
+// startTransition은 함수 => 이 함수로 성능저하를 일으키는 state 변화 함수를 감싸주면 됨
+// 브라우저는 싱글 스레드. 한번에 하나의 일밖에 처리하지 못함.
+// startTransition을 사용하게 될 경우 안에 있는 코드를 약간 늦게 시작하게 함
+
+// isPending은 startTransition이 처리중일 때 true를 반환하는 변수
+
+// --------------------------------------------------------------
+
+// useDeferredValue
+const variable = useDeferredValue(stateOrProps);
+// useDeferredValue안에 넣은 state는 변경이 조금 늦게 일어남
+// 그 변화값을 variable에 넣어줌

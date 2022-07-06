@@ -1,0 +1,44 @@
+* {
+  /* 배경 이미지를 가져오고, 사이즈를 웹페이지 화면에 맞게 조절하고, 위치를 중간으로 옮기는 코드 */
+  background-image: url(./bg.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.goods_wrapper {
+  /* display: flex로 한 줄로 세우되, 화면의 크기가 줄어들었을 때 잘리는게 아니라 줄바꿈이 일어나게 하고싶다면 */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+body {
+  /* 가로 스크롤이 생기지 않게 하고싶다면 */
+  overflow-x: hidden;
+  color: rgb(29, 29, 31);
+}
+
+.global-nav-links {
+  /* 최대 1000픽셀, 100픽셀 이하로는 메뉴바가 점점 좁아지는 옵션 */
+  max-width: 1000px;
+  /* 센터 정렬을 하기 위해 */
+  /* auto를 달면 마진을 쓸 수 있는 최대한을 다 쓰게된다 */
+  margin: 0 auto;
+  display: flex;
+  /* 서로 균일하게 떨어져있을 수 있도록 수평 정렬 */
+  justify-content: space-between;
+  /* 세로 칸의 중앙에 위치할 수 있도록 수직 정렬 */
+  align-items: center;
+}
+
+/* local nav links 안에 있는 a태그 중에서 class가 logo인 a를 뺀 나머지 a */
+.local-nav-links a:not(.logo) {
+  margin-left: 2em;
+}
+
+html {
+  /* 이렇게 html에 폰트사이즈를 정해두고 사용할 경우, em과 rem을 사용하기 편하다 */
+  /* em은 현재 태그의 폰트 사이즈를 기준으로 한 크기 */
+  /* rem은 root element, html에서 정한 14px를 기준으로 한 크기 */
+  font-size: 14px;
+}
