@@ -1,6 +1,6 @@
 styled-components theme과 typescript 연결하기
 
-$ npm install @types/styled-components
+npm install @types/styled-components
 
 그리고 declearation file을 만들어야 함. src폴더 안에 `styled.d.ts` 파일 생성
 

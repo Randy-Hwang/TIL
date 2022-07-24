@@ -60,3 +60,9 @@ function App() {
 const Input = styled.input.attrs({ required: true })`
   background-color: gray;
 `;
+
+// --------------------------------------
+
+// 전역으로 적용되는 styled-compoenets를 만들어야 할 때
+
+const GlobalRouter = createGlobalStyle``;
