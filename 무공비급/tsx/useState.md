@@ -8,7 +8,7 @@ setCounter("hello"); // error
 
 ```tsx
 const [counter, setCounter] = useState<string | number>(1);
-setCounter("hello"); // No Erroro
+setCounter("hello"); // No Error
 ```
 
 ---
